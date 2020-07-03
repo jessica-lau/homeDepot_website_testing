@@ -1,0 +1,60 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "dotenv": "^8.2.0",
+    "mocha": "^5.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "react-test-renderer": "^16.12.0",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "ui-test": "node node_modules/mocha/bin/mocha ./__tests__/*spec.js --timeout=60000",
+    "test1": "node node_modules/mocha/bin/mocha ./__tests__/target_homepage.spec.js --timeout=60000",
+    "test2": "node node_modules/mocha/bin/mocha ./__tests__/target_login.spec.js --timeout=60000",
+    "test3": "node node_modules/mocha/bin/mocha ./__tests__/target_store_location.spec.js --timeout=60000",
+    "test4": "node node_modules/mocha/bin/mocha ./__tests__/target_favorites.spec.js --timeout=60000",
+    "test5": "node node_modules/mocha/bin/mocha ./__tests__/target_find_stores.spec.js --timeout=60000",
+    "test6": "node node_modules/mocha/bin/mocha ./__tests__/target_help.spec.js --timeout=60000",
+    "test7": "node node_modules/mocha/bin/mocha ./__tests__/target_social_media.spec.js --timeout=60000",
+    "test8": "node node_modules/mocha/bin/mocha ./__tests__/target_careers.spec.js --timeout=60000",
+    "test9": "node node_modules/mocha/bin/mocha ./__tests__/target_apply_redcard.spec.js --timeout=60000",
+    "test10": "node node_modules/mocha/bin/mocha ./__tests__/target_giftcards.spec.js --timeout=60000",
+    "test11": "node node_modules/mocha/bin/mocha ./__tests__/target_weekly_ad.spec.js --timeout=60000",
+    "test12": "node node_modules/mocha/bin/mocha ./__tests__/target_registries_lookup.spec.js --timeout=60000",
+    "test13": "node node_modules/mocha/bin/mocha ./__tests__/target_increase_item_quantity.spec.js --timeout=60000",
+    "test14": "node node_modules/mocha/bin/mocha ./__tests__/target_get_app.spec.js --timeout=60000",
+    "test15": "node node_modules/mocha/bin/mocha ./__tests__/target_whats_new_section.spec.js --timeout=60000",
+    "testall": "node node_modules/mocha/bin/mocha ./__tests__/*.spec.js --timeout=60000",
+    "test2 report": "node node_modules/mocha/bin/mocha ./seleniumTest2.js --timeout=60000 --reporter mocha-simple-html-reporter --reporter-options output=report.html",
+    "test2-watch": "node node_modules/mocha/bin/mocha ./selenuimTest2.js --watch --recursive --timeout=60000"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "mocha-simple-html-reporter": "^1.1.0"
+  }
+}
