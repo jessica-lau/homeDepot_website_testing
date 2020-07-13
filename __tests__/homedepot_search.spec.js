@@ -62,6 +62,18 @@ describe("Home Page", () => {
 
     });
 
+    it("filter item by price", async () => {
+      let filterMinPrice = await driver.findElement(By.css(`[name="lowerBound"]`));
+      await filterMinPrice.sendKeys('100');
+      let filterMaxPrice = await driver.findElement(By.css(`[name="upperBound"]`));
+      await filterMaxPrice.sendKeys('400');
+      let filterPrice = await driver.findElement(By.css(`[data-test-id="price-refinement__submit"]`));
+      let isFilterPriceDisplayed = await filterPrice.isDisplayed();
+      assert.equal(isFilterPriceDisplayed, 1);
+      await filterPrice.click();
+      await driver.sleep(5000);
+    }
+    )
 
   });
 });
