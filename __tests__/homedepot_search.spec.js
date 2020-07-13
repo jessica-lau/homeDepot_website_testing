@@ -46,7 +46,7 @@ describe("Home Page", () => {
   });
 
   describe("Header", () => {
-    it.skip("should exist", async () => {
+    it("should exist", async () => {
       let title = await driver.getTitle()
       console.log(assert.equal(title, "The Home Depot"));
     });
@@ -55,11 +55,10 @@ describe("Home Page", () => {
       let search = await driver.findElement(By.id(`headerSearch`));
       await search.sendKeys('lawnmower\n');
       await driver.sleep(5000);
-      //let searchElement = await driver.findElement(By.className(`h-text-lg`));
-      //let result = await chipsElement.getText();
-      //console.log("result:" + result);
-      //console.log(assert.equal(result, "chips"));
-      //await driver.sleep(5000);
+      let searchElement = await driver.findElement(By.className(`original-keyword`));
+      let result = await searchElement.getText();
+      console.log("result:" + result);
+      console.log(assert.equal(result, '"lawnmower"'));
 
     });
 
