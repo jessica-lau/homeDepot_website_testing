@@ -74,19 +74,14 @@ describe("Home Page", () => {
       await driver.sleep(5000);
     }
     )
-
-    it("sort results by price", async () => {
-      let sortResults = await driver.findElement(By.className(`sortby__item drop-down__item`));
-      let isSortResultsDisplayed = await sortResults.isDisplayed();
-      assert.equal(isSortResultsDisplayed, 1);
-      await sortResults.click();
-      // let sortLowToHigh = await driver.findElement(By.className(`u__bold sortby__title`));
-      // let isSortLowToHighDisplayed = await sortLowToHigh.isDisplayed();
-      // assert.equal(isSortLowToHighDisplayed, 1);
-      // await sortLowToHigh.click();
+    
+    it("choose power type", async () => {
+      let powerType = await driver.findElement(By.id(`text_Battery`));
+      let isPowerTypeDisplayed = await powerType.isDisplayed();
+      assert.equal(isPowerTypeDisplayed, 1);
+      await powerType.click();
       await driver.sleep(5000);
     }
     )
-
   });
 });
