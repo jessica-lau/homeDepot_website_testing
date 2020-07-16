@@ -74,7 +74,16 @@ describe("Home Page", () => {
       await driver.sleep(5000);
     }
     )
-    
+
+    it("choose product rating", async () => {
+      let productRating = await driver.findElement(By.css(`[data-refinementvalue="4 & Up"]`));
+      let isProductRatingDisplayed = await productRating.isDisplayed();
+      assert.equal(isProductRatingDisplayed, 1);
+      await productRating.click();
+      await driver.sleep(5000);
+    }
+    )
+
     it("choose power type", async () => {
       let powerType = await driver.findElement(By.id(`text_Battery`));
       let isPowerTypeDisplayed = await powerType.isDisplayed();
