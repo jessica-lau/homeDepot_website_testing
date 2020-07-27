@@ -22,6 +22,7 @@
     "ui-test": "node node_modules/mocha/bin/mocha ./__tests__/*spec.js --timeout=60000",
     "test1": "node node_modules/mocha/bin/mocha ./__tests__/homedepot_search.spec.js --timeout=60000",
     "test2": "node node_modules/mocha/bin/mocha ./__tests__/homedepot_local_ad.spec.js --timeout=60000",
+    "test3": "node node_modules/mocha/bin/mocha ./__tests__/homedepot_giftcards.spec.js --timeout=60000",
     "testall": "node node_modules/mocha/bin/mocha ./__tests__/*.spec.js --timeout=60000",
     "test2 report": "node node_modules/mocha/bin/mocha ./seleniumTest2.js --timeout=60000 --reporter mocha-simple-html-reporter --reporter-options output=report.html",
     "test2-watch": "node node_modules/mocha/bin/mocha ./selenuimTest2.js --watch --recursive --timeout=60000"

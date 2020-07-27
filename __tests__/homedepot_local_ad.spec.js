@@ -56,7 +56,7 @@ describe("Home Page", () => {
         let isLocalAdDisplayed = await localAd.isDisplayed();
         assert.equal(isLocalAdDisplayed, 1);
         await localAd.click();
-        await driver.sleep(6000);
+        await driver.sleep(5000);
         });
 
 
