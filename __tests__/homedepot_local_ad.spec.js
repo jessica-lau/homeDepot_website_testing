@@ -51,13 +51,13 @@ describe("Home Page", () => {
             console.log(assert.equal(title, "The Home Depot"));
         });
 
-        //it("view local ad", async () => {
-            //let localAd = await driver.findElement(By.linkText(`Local Ad`));
-            //let isLocalAdDisplayed = await localAd.isDisplayed();
-           //assert.equal(isLocalAdDisplayed, 1);
-            //await localAd.click();
-            //await driver.sleep(6000);
-        //});
+        it("view local ad", async () => {
+        let localAd = await driver.findElement(By.linkText(`Local Ad`));
+        let isLocalAdDisplayed = await localAd.isDisplayed();
+        assert.equal(isLocalAdDisplayed, 1);
+        await localAd.click();
+        await driver.sleep(6000);
+        });
 
 
     });
