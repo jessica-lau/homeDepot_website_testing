@@ -67,7 +67,7 @@ describe("Home Page", () => {
             await driver.sleep(5000);
         });
 
-        it ("recipient of giftcard", async () => {
+        it("recipient of giftcard", async () => {
             let recipientGiftcard = await driver.findElement(By.id(`recipientName-input`));
             await recipientGiftcard.sendKeys('YB Lee');
             let senderGiftcard = await driver.findElement(By.id(`senderName-input`));
@@ -79,7 +79,7 @@ describe("Home Page", () => {
             await driver.sleep(5000);
         })
 
-        it ("giftcard type", async() => {
+        it("giftcard type", async () => {
             let typeGiftcard = await driver.findElement(By.css(`[data-cashbot-id="cardType-btn-button-button"]`));
             let isTypeGiftcardDisplayed = await typeGiftcard.isDisplayed();
             assert.equal(isTypeGiftcardDisplayed, 1);
@@ -87,6 +87,18 @@ describe("Home Page", () => {
             await driver.sleep(3000);
         })
 
+        it("giftcard event and style", async () => {
+            let eventGiftcard = await driver.findElement(By.id(`selectedGroupOrdinal-2-label`));
+            let isEventGiftcardDisplayed = await eventGiftcard.isDisplayed();
+            assert.equal(isEventGiftcardDisplayed, 1);
+            await eventGiftcard.click();
+            await driver.sleep(3000);
+            let styleGiftcard = await driver.findElement(By.id(`faceplate-4-label`));
+            let isStyleGiftcardDisplayed = await styleGiftcard.isDisplayed();
+            assert.equal(isStyleGiftcardDisplayed, 1);
+            await styleGiftcard.click();
+            await driver.sleep(3000);
 
+        })
     });
 });
