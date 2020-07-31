@@ -97,8 +97,28 @@ describe("Home Page", () => {
             let isStyleGiftcardDisplayed = await styleGiftcard.isDisplayed();
             assert.equal(isStyleGiftcardDisplayed, 1);
             await styleGiftcard.click();
-            await driver.sleep(3000);
+            await driver.sleep(5000);
 
         })
+
+        it("giftcard amount & quantity", async () => {
+            let amountGiftcard = await driver.findElement(By.css(`[type="submit"]`));
+            let isAmountGiftcardDisplayed = await amountGiftcard.isDisplayed();
+            assert.equal(isAmountGiftcardDisplayed, 1);
+            await amountGiftcard.click();
+            await driver.sleep(3000);
+        })
+
+        it("giftcard message", async () => {
+            // let messageGiftcard = await driver.findElement(By.className(`field-group__div`));
+            // await messageGiftcard.sendKeys('Happy birthday beautiful! xoxo, Jess');
+            // await driver.sleep(3000);
+            let submitMessage = await driver.findElement(By.css(`[type="submit"]`));
+            let isSubmitMessageDisplayed = await submitMessage.isDisplayed();
+            assert.equal(isSubmitMessageDisplayed, 1);
+            await submitMessage.click();
+            await driver.sleep(3000);
+        })
+
     });
 });
