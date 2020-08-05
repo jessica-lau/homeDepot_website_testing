@@ -114,8 +114,20 @@ describe("Home Page", () => {
             let isSubmitMessageDisplayed = await submitMessage.isDisplayed();
             assert.equal(isSubmitMessageDisplayed, 1);
             await submitMessage.click();
-            await driver.sleep(3000);
+            await driver.sleep(5000);
         })
+
+        // it("giftcard delivery email", async() => {
+        //     let deliveryEmail = await driver.findElement(By.id(`recipientEmail-input`));
+        //     await deliveryEmail.sendKeys('test@gmail.com');
+        //     await driver.sleep(3000);
+        //     let addToCart = await driver.fringElement(By.css(`[data-cashbot-id="delivery-button-submit"]`));
+        //     let isAddToCartDisplayed = await addToCart.isDisplayed();
+        //     assert.equal(isAddToCartDisplayed, 1);
+        //     await addToCart.click();
+        //     await driver.sleep(2000);
+
+        // })
 
     });
 });
