@@ -110,9 +110,6 @@ describe("Home Page", () => {
         })
 
         it("giftcard message", async () => {
-            // let messageGiftcard = await driver.findElement(By.className(`field-group__div`));
-            // await messageGiftcard.sendKeys('Happy birthday beautiful! xoxo, Jess');
-            // await driver.sleep(3000);
             let submitMessage = await driver.findElement(By.css(`[type="submit"]`));
             let isSubmitMessageDisplayed = await submitMessage.isDisplayed();
             assert.equal(isSubmitMessageDisplayed, 1);
