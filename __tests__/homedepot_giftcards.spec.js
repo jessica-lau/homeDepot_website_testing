@@ -117,17 +117,17 @@ describe("Home Page", () => {
             await driver.sleep(5000);
         })
 
-        // it("giftcard delivery email", async() => {
-        //     let deliveryEmail = await driver.findElement(By.id(`recipientEmail-input`));
-        //     await deliveryEmail.sendKeys('test@gmail.com');
-        //     await driver.sleep(3000);
-        //     let addToCart = await driver.fringElement(By.css(`[data-cashbot-id="delivery-button-submit"]`));
-        //     let isAddToCartDisplayed = await addToCart.isDisplayed();
-        //     assert.equal(isAddToCartDisplayed, 1);
-        //     await addToCart.click();
-        //     await driver.sleep(2000);
+        it("giftcard delivery email", async() => {
+            let deliveryEmail = await driver.findElement(By.id(`recipientEmail-input`));
+            await deliveryEmail.sendKeys('test@gmail.com');
+            await driver.sleep(3000);
+            let addToCart = await driver.findElement(By.css(`[data-cashbot-id="delivery-button-submit"]`));
+            let isAddToCartDisplayed = await addToCart.isDisplayed();
+            assert.equal(isAddToCartDisplayed, 1);
+            await addToCart.click();
+            await driver.sleep(2000);
 
-        // })
+        })
 
     });
 });
