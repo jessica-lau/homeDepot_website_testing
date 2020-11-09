@@ -1,23 +1,23 @@
-var webdriver = require('selenium-webdriver'),
+var webdriver = require("selenium-webdriver"),
   By = webdriver.By;
-require('selenium-webdriver/testing');
-require('dotenv').config();
-var assert = require('assert');
-let chrome = require('selenium-webdriver/chrome');
+require("selenium-webdriver/testing");
+require("dotenv").config();
+var assert = require("assert");
+let chrome = require("selenium-webdriver/chrome");
 
 describe("Home Page", () => {
   let driver;
 
   before(async () => {
     var capabilities = {
-      'browserName': 'Chrome',
-      'browser_version': '60.0',
-      'os': 'Windows',
-      'os_version': '10',
-      'resolution': '1920x1080',
-      'browserstack.user': process.env.browserstack_user,
-      'browserstack.key': process.env.browserstack_key,
-      'name': 'B Sample Test'
+      browserName: "Chrome",
+      browser_version: "60.0",
+      os: "Windows",
+      os_version: "10",
+      resolution: "1920x1080",
+      "browserstack.user": process.env.browserstack_user,
+      "browserstack.key": process.env.browserstack_key,
+      name: "B Sample Test",
     };
     //Note: run test on browserstacker:
 
@@ -37,8 +37,7 @@ describe("Home Page", () => {
 
     console.log("started testing");
     //driver.manage().window().maximize();
-    await driver.get('http://www.homedepot.com');
-
+    await driver.get("http://www.homedepot.com");
   });
 
   after(async () => {
@@ -47,50 +46,56 @@ describe("Home Page", () => {
 
   describe("Header", () => {
     it("should exist", async () => {
-      let title = await driver.getTitle()
-      console.log(assert.equal(title, "The Home Depot"));
+      let title = await driver.getTitle();
+      console.log(assert.strictEqual(title, "The Home Depot"));
     });
 
     it("search item on homepage", async () => {
       let search = await driver.findElement(By.id(`headerSearch`));
-      await search.sendKeys('lawnmower\n');
+      await search.sendKeys("lawnmower\n");
       await driver.sleep(5000);
-      let searchElement = await driver.findElement(By.className(`original-keyword`));
+      let searchElement = await driver.findElement(
+        By.className(`original-keyword`)
+      );
       let result = await searchElement.getText();
       console.log("result:" + result);
-      console.log(assert.equal(result, '"lawnmower"'));
-
+      console.log(assert.strictEqual(result, '"lawnmower"'));
     });
 
     it("filter item by price", async () => {
-      let filterMinPrice = await driver.findElement(By.css(`[name="lowerBound"]`));
-      await filterMinPrice.sendKeys('100');
-      let filterMaxPrice = await driver.findElement(By.css(`[name="upperBound"]`));
-      await filterMaxPrice.sendKeys('400');
-      let filterPrice = await driver.findElement(By.css(`[data-test-id="price-refinement__submit"]`));
+      let filterMinPrice = await driver.findElement(
+        By.css(`[name="lowerBound"]`)
+      );
+      await filterMinPrice.sendKeys("100");
+      let filterMaxPrice = await driver.findElement(
+        By.css(`[name="upperBound"]`)
+      );
+      await filterMaxPrice.sendKeys("400");
+      let filterPrice = await driver.findElement(
+        By.css(`[data-test-id="price-refinement__submit"]`)
+      );
       let isFilterPriceDisplayed = await filterPrice.isDisplayed();
-      assert.equal(isFilterPriceDisplayed, 1);
+      assert.strictEqual(isFilterPriceDisplayed, 1);
       await filterPrice.click();
       await driver.sleep(5000);
-    }
-    )
+    });
 
     it("choose product rating", async () => {
-      let productRating = await driver.findElement(By.css(`[data-refinementvalue="4 & Up"]`));
+      let productRating = await driver.findElement(
+        By.css(`[data-refinementvalue="4 & Up"]`)
+      );
       let isProductRatingDisplayed = await productRating.isDisplayed();
-      assert.equal(isProductRatingDisplayed, 1);
+      assert.strictEqual(isProductRatingDisplayed, 1);
       await productRating.click();
       await driver.sleep(5000);
-    }
-    )
+    });
 
     it("choose power type", async () => {
       let powerType = await driver.findElement(By.id(`text_Battery`));
       let isPowerTypeDisplayed = await powerType.isDisplayed();
-      assert.equal(isPowerTypeDisplayed, 1);
+      assert.strictEqual(isPowerTypeDisplayed, 1);
       await powerType.click();
       await driver.sleep(5000);
-    }
-    )
+    });
   });
 });
