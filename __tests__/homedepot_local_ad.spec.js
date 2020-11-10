@@ -53,7 +53,7 @@ describe("Home Page", () => {
     it("view local ad", async () => {
       let localAd = await driver.findElement(By.linkText(`Local Ad`));
       let isLocalAdDisplayed = await localAd.isDisplayed();
-      assert.strictEqual(isLocalAdDisplayed, 1);
+      assert.equal(isLocalAdDisplayed, 1);
       await localAd.click();
       await driver.sleep(5000);
     });
